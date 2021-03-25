@@ -18,3 +18,4 @@ A simple python program to play Sudoku in GUI or see it solve on its own using b
 - On pressing Enter key if there is a valid solution with that number it will be fixed and turn green.
 - Else it will show wrong at the bottom left.
 - Press Spacebar if you dont want to solve it or want the computer to solve it for you.
+- You may change the board of sudoku in [main.py](./main.py) if you want to.
