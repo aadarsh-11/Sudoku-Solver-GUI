@@ -1,3 +1,5 @@
+
+# The board for sudoku
 board = [
     [7, 8, 0, 4, 0, 0, 1, 2, 0],
     [6, 0, 0, 0, 7, 5, 0, 0, 9],
@@ -72,9 +74,12 @@ def solve_sudoku(brd):
 
 
 if __name__ == "__main__":
+    print("\nBoard Before Solving:\n")
     print_board(board)
 
+    print()
     print("- " * 15)
+    print("Board After Solving:\n")
     solve_sudoku(board)
 
     print_board(board)
