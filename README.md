@@ -5,7 +5,7 @@ A simple python program to play Sudoku in GUI or see it solve on its own using b
 
 - Clone the repo and install the dependencies by using this command in the terminal: 
 
-      pip install -r requirments.txt
+      pip install -r requirements.txt
 
 
 - Just run the [sudokuGui.py](./sudokuGui.py) file to run the program
