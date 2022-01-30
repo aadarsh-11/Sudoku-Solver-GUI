@@ -3,7 +3,7 @@ import time
 from main import is_valid, solve_sudoku, get_board, find_next_empty
 
 pg.font.init()
-font = pg.font.SysFont("comicsans", 40)
+font = pg.font.SysFont("comicsans", 28)
 
 
 class Square:
@@ -29,11 +29,11 @@ class Square:
 
         if self.temp != 0 and self.value == 0:
             number = font.render(str(self.temp), True, (128, 128, 128))
-            window.blit(number, (x + 5, y + 5))
+            window.blit(number, (x + (box_width - number.get_width()) / 2, y + (box_width - number.get_height()) / 2))
         elif self.value != 0:
             number = font.render(str(self.value), True, (0, 0, 0))
             pg.draw.rect(window, (0, 255, 0), (x, y, box_width, box_width), 0)
-            window.blit(number, (x + (box_width - number.get_width()) / 2, y + (box_width - number.get_width()) / 2))
+            window.blit(number, (x + (box_width - number.get_width()) / 2, y + (box_width - number.get_height()) / 2))
 
         if self.is_selected:
             pg.draw.rect(window, (255, 0, 0), (x, y, box_width, box_width), 3)
@@ -49,7 +49,7 @@ class Square:
             pg.draw.rect(window, (0, 255, 0), (x, y, box_width, box_width), 0)
         else:
             pg.draw.rect(window, (255, 0, 0), (x, y, box_width, box_width), 0)
-        window.blit(number, (x + (box_width - number.get_width()) / 2, y + (box_width - number.get_width()) / 2))
+        window.blit(number, (x + (box_width - number.get_width()) / 2, y + (box_width - number.get_height()) / 2))
 
 
 class sudoku_matrix:
@@ -183,10 +183,10 @@ def redraw_window(window, board, play_time):
     window.fill((255, 255, 255))
     if board.is_finished():
         display_msg = font.render("Game over with playtime:  " + get_time(play_time), True, (255, 0, 0))
-        window.blit(display_msg, (15, 560))
+        window.blit(display_msg, (15, 550))
     else:
         display_time = font.render("Time:  " + get_time(play_time), True, (255, 0, 0))
-        window.blit(display_time, (540 - 200, 560))
+        window.blit(display_time, (540 - 200, 550))
         display_strikes = font.render("X " * min(10,board.strikes) , True, (255, 0, 0))
         window.blit(display_strikes, (15, 560))
     board.draw_board()
